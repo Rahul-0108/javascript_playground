@@ -17,7 +17,7 @@ server.addService(todoPackage.Todo.service,
 server.start();
 
 const todos = []
-function createTodo (call, callback) {
+function createTodo (call, callback) { // call is for request, callback is for response
     const todoItem = {
         "id": todos.length + 1,
         "text": call.request.text
@@ -26,7 +26,7 @@ function createTodo (call, callback) {
     callback(null, todoItem);
 }
 
-function readTodosStream(call, callback) {
+function readTodosStream(call, callback) { 
     
     todos.forEach(t => call.write(t)); // one todo at a  time
     call.end();
