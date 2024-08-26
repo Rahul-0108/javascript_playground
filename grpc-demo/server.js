@@ -28,7 +28,7 @@ function createTodo (call, callback) {
 
 function readTodosStream(call, callback) {
     
-    todos.forEach(t => call.write(t));
+    todos.forEach(t => call.write(t)); // one todo at a  time
     call.end();
 }
 
